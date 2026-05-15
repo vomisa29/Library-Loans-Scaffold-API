@@ -1,9 +1,19 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsDate,  IsEnum, IsNumber, IsOptional } from 'class-validator';
+import { IsDate,  IsEnum, IsNumber, IsOptional, IsUUID } from 'class-validator';
 import { Status } from '../entities/loan.entity';
 
 export class CreateUserDto {
+
+  @ApiProperty()
+  @IsUUID()
+  userID!: string;
+
+  @ApiProperty()
+  @IsUUID()
+  itemID!: string;
+
+
   @ApiProperty({ example: '15/05/2026' })
   @IsDate()
   loanedAt!: Date;
@@ -15,7 +25,6 @@ export class CreateUserDto {
   @ApiProperty({ example: '15/05/2026' })
   @IsDate()
   returnedAt!: Date;
-
 
   @ApiPropertyOptional({ enum: Status, default: Status.ACTIVE })
   @IsOptional()

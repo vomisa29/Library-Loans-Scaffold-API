@@ -40,7 +40,7 @@ export class UsersService {
       firstName: dto.firstName,
       lastName: dto.lastName,
       passwordHash,
-      role: dto.role ?? UserRole.PATIENT,
+      role: dto.role ?? UserRole.MEMBER,
       isActive: true,
     });
     return this.usersRepo.save(user);

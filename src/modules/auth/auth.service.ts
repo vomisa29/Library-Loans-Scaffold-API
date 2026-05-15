@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   async register(dto: RegisterDto, actorRole?: UserRole): Promise<AuthResponse> {
-    const role = actorRole === UserRole.ADMIN && dto.role ? dto.role : UserRole.PATIENT;
+    const role = actorRole === UserRole.ADMIN && dto.role ? dto.role : UserRole.MEMBER;
     const user = await this.usersService.create({
       email: dto.email,
       password: dto.password,
