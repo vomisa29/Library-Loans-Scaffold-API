@@ -10,9 +10,8 @@ import { Exclude } from 'class-transformer';
 
 export enum UserRole {
   ADMIN = 'admin',
-  DOCTOR = 'doctor',
-  RECEPTIONIST = 'receptionist',
-  PATIENT = 'patient',
+  LIBRARIAN = 'librarian',
+  MEMBER = 'member',
 }
 
 @Entity({ name: 'users' })
@@ -34,7 +33,7 @@ export class User {
   @Column({ type: 'varchar', length: 100 })
   lastName!: string;
 
-  @Column({ type: 'enum', enum: UserRole, default: UserRole.PATIENT })
+  @Column({ type: 'enum', enum: UserRole, default: UserRole.MEMBER })
   role!: UserRole;
 
   @Column({ type: 'boolean', default: true })
