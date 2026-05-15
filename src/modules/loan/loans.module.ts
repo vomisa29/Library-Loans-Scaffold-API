@@ -7,8 +7,8 @@ import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Loan]), UsersModule],
-  controllers: [LoansController],
-  providers: [LoansService],
-  exports: [LoansService],
+//   controllers: [LoansController],
+//   providers: [LoansService],
+//   exports: [LoansService],
 })
 export class LoansModule {}

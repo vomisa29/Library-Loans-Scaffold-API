@@ -7,8 +7,8 @@ import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Item]), UsersModule],
-  controllers: [ItemsController],
-  providers: [ItemsService],
-  exports: [ItemsService],
+//   controllers: [ItemsController],
+//   providers: [ItemsService],
+//   exports: [ItemsService],
 })
 export class ItemsModule {}

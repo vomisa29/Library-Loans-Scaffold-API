@@ -15,11 +15,11 @@ export class ItemService {
     ){}
 
     async findAll(): Promise<Item[]> {
-       return await this.ItemRepository.find({ relations: ["organizador", "asistentes", "reviews", "infoItems"] });
+       return await this.ItemRepository.find();
     }
 
     async findOne(id: string): Promise<Item> {
-       const Item : Item | null = await this.ItemRepository.findOne({where: {id}, relations: ["organizador", "asistentes", "reviews", "infoItems"] } );
+       const Item : Item | null = await this.ItemRepository.findOne({where: {id}});
        if (!Item)
          throw new BusinessLogicException("The event with the given id was not found", BusinessError.NOT_FOUND);
   
